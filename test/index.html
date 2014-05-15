@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+ <meta charset="utf-8">
+ <script src="../js/utils.js"></script>
+ <script src="../js/controlPanel.js"></script> <!-- We are actively testing this -->
+ <script src="../js/Info.js"></script> <!-- We are actively testing this -->
+ <script src="js/basic.js"></script>
+ <script src="js/testtools/handleResponse.js"></script>
+ <link rel="stylesheet", href="css/qunit.css">
+ 
+</head>
+<body>
+<header></header>
+<div id="root", loc=".."/> <!-- this allows us to find our root directory -->
+<div id="configfile", file="../../test/fakeconfigfile.cfg"/> <!--this is our config file -->
+
+<nav>
+
+</nav>
+
+
+
+
+<div id="qunit"></div>
+<div id="qunit-fixture"></div>
+<script src="js/testtools/qunit.js"></script>
+<script src="jstest/admin.js"></script>
+<script src="jstest/InfoPanel.js"></script>
+
+<p> manual testing area </p>
+
+<div id="InfoPanel"/>
+
+<input type="button", id="rawdata", value="blah", hidden="hidden"/>
+<a id="downloadRawData">null</a>
+<ul id="displaypanel">
+</ul>
+
+<ul>
+  <input type="submit", onclick="dotest()", value="Run Server Side Tests"/>
+  
+</ul>
+<div id="log"/>
+<footer></footer>
+
+</body>
+</html>
+
+

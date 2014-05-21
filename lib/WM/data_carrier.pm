@@ -215,8 +215,28 @@ sub getDependantDataSources {
     
     return @filesForExport;
     
-
-
 }
 
+#returns an $IN and an $OUT. the $in, is the file to be read, the out is the file
+#to be written.
+
+#it assumes only one will be in, and only one will be out: the common case.
+sub getFileHandlesForTransform {
+    my ($this) = @_;
+    
+    my @targetFiles = $this->getDependantDataSources();
+    
+    my $target = $targetFiles[0];
+    my $outFile = join('/', ($this->{data}->getSiteRoot(), $this->{data}->{data}, $this->{data}->{artifactName}));
+
+    $target =~ s/.gz$//;
+
+    $outFile =~ s/.gz$//;
+
+    open(my $IN, '<', $target) or die;
+    open(my $OUT, '>', $outFile) or die;
+
+    return ($IN, $OUT);
+
+}
 1;

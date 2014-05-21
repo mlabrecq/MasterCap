@@ -185,9 +185,6 @@ sub average {
 	    } 
 
 	    $average{$start} = $average{$start} . '+' . $value;
-	    
-	    
-
 
 	}
 
@@ -214,8 +211,12 @@ sub average {
 	    $quarters += 1;
 	}
 	my $avg = 0;
+	if ($div) {
+	    $avg = $sum/$div;
+	    
+	}
 	$avg = sprintf("%.2f", $avg);
-		
+
 	$string .= ',' . $avg . ',' . $quarters;
     }
 
